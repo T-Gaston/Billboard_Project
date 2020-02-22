@@ -5,3 +5,5 @@
   <%= f.text_field :name, required: true, autofocus: true %>
   <%= f.submit %>
 <% end %>
+<hr />
+<%= @artist.id ? (link_to 'Back to Artist Page', artist_path(@artist)) : (link_to 'Back to Homepage', artists_path) %>
