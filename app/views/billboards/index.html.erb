@@ -1,0 +1,6 @@
+<h1>Billboards#index</h1>
+
+<%= @billboards.each do |billboard| %>
+  <%= billboard.name %>
+  <%= link_to billboard.name, billboard_path(@billboard) %>
+<% end %>

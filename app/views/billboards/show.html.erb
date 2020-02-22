@@ -1,0 +1,14 @@
+<h1>Billboards#show</h1>
+
+
+<%= @billboard.name %>
+
+<hr />
+
+<%= @songs.each do |song| %>
+  <%= song.name %>
+<% end %>
+
+<hr />
+
+<h4><%= link_to "Back to Billboards", billboards_path %></h4>
