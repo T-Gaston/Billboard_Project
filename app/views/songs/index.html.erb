@@ -1,0 +1,14 @@
+<h1>Songs</h1>
+
+<h3>Select a song to see its details</h3>
+
+
+<% @songs.each do |song| %>
+  <%= link_to song.name, artist_song_path(@artist, song)%>
+<% end %>
+
+
+
+<%= link_to "Add a New Song", new_artist_song_path(@artist)%>
+
+

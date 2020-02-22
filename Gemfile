@@ -29,16 +29,18 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
+  gem 'pry-rails'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'pry-rails'
+  gem "better_errors"
+  gem "binding_of_caller"
+  
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
