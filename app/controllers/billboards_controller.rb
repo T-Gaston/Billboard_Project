@@ -7,7 +7,6 @@ class BillboardsController < ApplicationController
   end
 
   def show
-    @billboard = Billboard.find(params[:id])
     @songs = @billboard.songs
   end
 
@@ -31,17 +30,35 @@ class BillboardsController < ApplicationController
   end
 
   def update
+    if @billboard.update(billboard_params)
+      redirect_to billboard_path(@billboard)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @billboard.destroy
+    redirect_to billboards_path
   end
 
 
 
   def add_song
+    @billboard = Billboard.find(params[:id])
+    @billboard.songs << Song.find(params[:song_id])
+    redirect_to billboard_path(@billboard)
   end
 
   def new_song
+    @billboard = Billboard.find(params[:id])
+    @songs = Song.all.where(billboard_id: nil)
   end
 
   def remove_song
+    @billboard = Billboard.find(params{:id})
+    Song.find(params[:song_id]).update(billboard_id: nil)
+    redirect_to billboard_path(@billboard)
   end
 
 

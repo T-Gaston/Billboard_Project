@@ -1,6 +1,9 @@
 <h1>Billboards#index</h1>
+<h4><%= link_to 'New Billboard', new_billboard_path %></h4>
 
-<%= @billboards.each do |billboard| %>
-  <%= billboard.name %>
-  <%= link_to billboard.name, billboard_path(@billboard) %>
+<% @billboards.each do |billboard| %>
+  <h2><%= billboard.name %></h2>
+  <%= link_to 'See Billboard Top 5', billboard_path(billboard) %>
+  <%= link_to 'Edit Billboard', edit_billboard_path(billboard) %>
+  <%= link_to 'Delete Billboard', billboard, method: :delete %>
 <% end %>

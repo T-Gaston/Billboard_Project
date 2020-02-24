@@ -1,14 +1,17 @@
 <h1>Billboards#show</h1>
 
+<h1>Billboard: <%= @billboard.name %></h1>
 
-<%= @billboard.name %>
-
-<hr />
-
-<%= @songs.each do |song| %>
-  <%= song.name %>
+<% if @songs.any? %>
+  <% @songs.each do |song| %>
+    <h4><%= song.name %></h4>
+    <%= link_to "Remove from Billboard", remove_billboard_song_path(@billboard, song), method: :delete %>
+  <% end%>
 <% end %>
 
-<hr />
+<h4><%= link_to "Add Song to Billboard", new_billboard_song_path(@billboard) %></h4>
+
+
+
 
 <h4><%= link_to "Back to Billboards", billboards_path %></h4>
