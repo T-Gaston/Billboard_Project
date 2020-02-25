@@ -5,11 +5,11 @@
 <% if @songs.any? %>
   <% @songs.each do |song| %>
     <h4><%= song.name %></h4>
-    <%= link_to "Remove from Billboard", remove_billboard_song_path(@billboard, song), method: :delete %>
-  <% end%>
+    <%= link_to "Remove from Billboard", remove_billboard_song_path(@billboard, song.id), method: :delete %>
+  <% end %>
 <% end %>
 
-<h4><%= link_to "Add Song to Billboard", new_billboard_song_path(@billboard) %></h4>
+<h4><%= link_to "Add Song to Billboard", new_billboard_song_path(@billboard)%></h4>
 
 
 

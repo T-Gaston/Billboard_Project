@@ -7,7 +7,9 @@ class BillboardsController < ApplicationController
   end
 
   def show
-    @songs = @billboard.songs
+    @songs = @billboard.songs.all
+    # @songs = Song.all - @board_songs
+    # binding.pry
   end
 
   def new
